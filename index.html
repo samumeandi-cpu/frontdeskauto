@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FrontDesk Auto by Musinc Ltd — Executive Inbox Intelligence &amp; Automatic Replies</title>
+  <meta name="description" content="FrontDesk Auto monitors your executive inbox 24/7, sends instant 3-second WhatsApp alerts, and dispatches tailored automatic email replies to priority accounts. $50 Lifetime Access before Dec 31.">
+  <meta property="og:title" content="FrontDesk Auto — Instant WhatsApp Alerts &amp; Automatic Email Replies">
+  <meta property="og:description" content="Stop losing high-value clients to a crowded inbox. 3-second mobile alerts &amp; automatic email replies. One-time $50 Lifetime Access before Dec 31.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=85">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23282B30'/%3E%3Cpath d='M14 22l18 13 18-13v22H14V22zm0-4h36l-18 13-18-13z' fill='%23ECE3D3'/%3E%3C/svg%3E">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            graylight1: '#E6E7E3', /* Light Gray Shade 1: Soft Mist Gray */
+            graylight2: '#D5D8D2', /* Light Gray Shade 2: Architectural Pewter Gray */
+            beige1: '#ECE3D3',     /* Warm Beige Shade 1: Editorial Linen Beige */
+            beige2: '#DFD3BE',     /* Warm Beige Shade 2: Warm Sandstone Beige */
+            darkgray1: '#23262B',  /* Deep Executive Charcoal for Primary Headings & Dark Panels */
+            darkgray2: '#343840',  /* Secondary Dark Charcoal Gray */
+            darkgray3: '#4B5059',  /* Muted Dark Gray for Body Text */
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #E6E7E3;
+      color: #23262B;
+    }
+    /* Creative Multi-Tone Background Architecture (2 Light Grays + Warm Beige) */
+    .bg-split-hero {
+      background: linear-gradient(115deg, #E6E7E3 0%, #E6E7E3 55%, #ECE3D3 55.1%, #DFD3BE 100%);
+    }
+    .bg-creative-bento {
+      background: linear-gradient(180deg, #ECE3D3 0%, #E6E7E3 100%);
+    }
+    .bg-diagonal-beige-gray {
+      background: linear-gradient(135deg, #D5D8D2 0%, #D5D8D2 50%, #ECE3D3 50.1%, #ECE3D3 100%);
+    }
+    .card-beige {
+      background-color: #ECE3D3;
+      border: 1px solid #CFC3AE;
+      box-shadow: 0 12px 32px -8px rgba(35, 38, 43, 0.08);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-beige:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px -10px rgba(35, 38, 43, 0.14);
+    }
+    .card-light-gray {
+      background-color: #E6E7E3;
+      border: 1px solid #C5C8C0;
+      box-shadow: 0 12px 32px -8px rgba(35, 38, 43, 0.08);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card-light-gray:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px -10px rgba(35, 38, 43, 0.14);
+    }
+    .card-pewter-gray {
+      background-color: #D5D8D2;
+      border: 1px solid #B8BCB3;
+      box-shadow: 0 12px 32px -8px rgba(35, 38, 43, 0.09);
+    }
+    .card-dark-slate {
+      background-color: #23262B;
+      color: #FFFFFF;
+      border: 1px solid #393E47;
+      box-shadow: 0 24px 48px -12px rgba(20, 22, 26, 0.32);
+    }
+    input[type="range"] {
+      accent-color: #23262B;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-darkgray1 selection:text-white min-h-screen">
+
+  <!-- TOP EXECUTIVE ANNOUNCEMENT BAR -->
+  <div class="bg-darkgray1 text-white py-2.5 px-4 text-center text-xs sm:text-sm font-normal tracking-wide border-b border-darkgray2">
+    <div class="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-2">
+      <span class="uppercase tracking-widest text-[10px] font-bold px-2.5 py-0.5 rounded bg-beige1 text-darkgray1">Founding License</span>
+      <span>One-time fee of <strong class="font-semibold text-white underline underline-offset-4">$50 before December 31</strong> &mdash; $200 from January for Lifetime Access.</span>
+      <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=samumeandi%40gmail.com&item_name=FrontDesk+Auto+Early-Bird+Lifetime+Access+%28Musinc+Ltd%29&amount=50.00&currency_code=USD" target="_blank" rel="noopener" class="ml-2 inline-flex items-center space-x-1 px-3 py-0.5 rounded-full bg-white/10 hover:bg-beige1 hover:text-darkgray1 text-beige1 font-semibold text-xs border border-white/15 transition">
+        <span>Instant PayPal Checkout</span>
+        <span>&rarr;</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- STICKY EXECUTIVE NAVIGATION -->
+  <nav class="sticky top-0 z-50 bg-[#E6E7E3]/95 backdrop-blur-md border-b border-[#C5C8C0]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center space-x-3.5 group">
+        <div class="w-11 h-11 rounded-xl bg-darkgray1 flex items-center justify-center text-beige1 shadow-md border border-darkgray2 group-hover:scale-105 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+          </svg>
+        </div>
+        <div>
+          <span class="text-2xl font-serif font-bold tracking-tight text-darkgray1 block leading-none">FrontDesk Auto</span>
+          <span class="text-[10px] uppercase tracking-[0.2em] text-darkgray3 font-semibold mt-1 block">Musinc Ltd &bull; Executive Suite</span>
+        </div>
+      </a>
+
+      <div class="hidden lg:flex items-center space-x-8 text-sm font-medium text-darkgray2">
+        <a href="#how-it-works" class="hover:text-darkgray1 transition">How It Works</a>
+        <a href="#problem-solution" class="hover:text-darkgray1 transition">Why FrontDesk Auto</a>
+        <a href="#simulator" class="hover:text-darkgray1 transition">Live Simulator</a>
+        <a href="#customers" class="hover:text-darkgray1 transition">Client Stories</a>
+        <a href="#mail-options" class="hover:text-darkgray1 transition">FrontDesk Mail</a>
+        <a href="#pricing" class="hover:text-darkgray1 transition">Pricing</a>
+      </div>
+
+      <div class="flex items-center space-x-3">
+        <a href="#mail-options" class="hidden sm:inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl text-xs font-semibold bg-beige1 hover:bg-beige2 text-darkgray1 border border-[#C5B8A1] transition">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span>frontdeskauto@outlook.com</span>
+        </a>
+        <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=samumeandi%40gmail.com&item_name=FrontDesk+Auto+Early-Bird+Lifetime+Access+%28Musinc+Ltd%29&amount=50.00&currency_code=USD" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-darkgray1 hover:bg-darkgray2 text-white transition shadow-md">
+          <span>Get Lifetime &bull; $50</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION: Split Light Gray #1 & Warm Beige with Notification Phone Image -->
+  <section class="relative pt-16 pb-20 bg-split-hero border-b border-[#C5C8C0]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Editorial Copy & High-Contrast CTAs -->
+        <div class="lg:col-span-7 text-left">
+          <div class="inline-flex items-center space-x-2.5 px-4 py-1.5 rounded-full bg-darkgray1 text-white text-[11px] font-semibold uppercase tracking-widest mb-7 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Autonomous Executive Inbox Intelligence</span>
+          </div>
+
+          <h1 class="text-5xl sm:text-6xl lg:text-[64px] font-serif font-semibold tracking-tight text-darkgray1 leading-[1.05]">
+            Instant WhatsApp Alerts &amp; <br class="hidden sm:inline" />
+            <span class="italic font-normal text-darkgray3">Automatic Email Replies.</span>
+          </h1>
+
+          <p class="mt-6 text-base sm:text-lg text-darkgray2 max-w-xl font-normal leading-relaxed">
+            Never let a high-value client wait in a crowded inbox again. FrontDesk Auto notifies your mobile in under three seconds and dispatches tailored automatic replies to your priority accounts 24/7.
+          </p>
+
+          <!-- HERO CTAS WITH PAYPAL & DEDICATED MAIL -->
+          <div class="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=samumeandi%40gmail.com&item_name=FrontDesk+Auto+Early-Bird+Lifetime+Access+%28Musinc+Ltd%29&amount=50.00&currency_code=USD" target="_blank" rel="noopener" class="px-8 py-4 rounded-xl font-semibold text-sm bg-darkgray1 text-white hover:bg-darkgray2 transition shadow-lg flex items-center justify-center space-x-2.5">
+              <svg class="w-4 h-4 text-beige1" fill="currentColor" viewBox="0 0 24 24"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106z"/></svg>
+              <span>Acquire $50 Lifetime Access (PayPal)</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="#live-demo" class="px-7 py-4 rounded-xl font-semibold text-sm bg-beige1 hover:bg-beige2 text-darkgray1 border border-[#C5B8A1] transition flex items-center justify-center space-x-2">
+              <span>Test Live Phone Alert</span>
+            </a>
+          </div>
+
+          <!-- Key Metrics Strip Mixing Dark Gray (White Text) & Beige (Dark Gray Text) -->
+          <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3.5">
+            <div class="card-dark-slate rounded-xl p-4">
+              <div class="text-2xl font-serif font-bold text-white">&lt; 3s</div>
+              <div class="text-[11px] uppercase tracking-widest text-beige1 mt-0.5 font-medium">WhatsApp Alert</div>
+            </div>
+            <div class="card-beige rounded-xl p-4">
+              <div class="text-2xl font-serif font-bold text-darkgray1">24/7</div>
+              <div class="text-[11px] uppercase tracking-widest text-darkgray3 mt-0.5 font-medium">Auto-Replies</div>
+            </div>
+            <div class="card-dark-slate rounded-xl p-4">
+              <div class="text-2xl font-serif font-bold text-white">99.4%</div>
+              <div class="text-[11px] uppercase tracking-widest text-beige1 mt-0.5 font-medium">VIP Precision</div>
+            </div>
+            <div class="card-beige rounded-xl p-4">
+              <div class="text-2xl font-serif font-bold text-darkgray1">$0/mo</div>
+              <div class="text-[11px] uppercase tracking-widest text-darkgray3 mt-0.5 font-medium">No Subscriptions</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Subject-Relevant Image — Executive Reading Phone Notification -->
+        <div class="lg:col-span-5">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-darkgray1 bg-darkgray1">
+            <img 
+              src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=85" 
+              alt="Executive reading an instant FrontDesk Auto WhatsApp notification on his phone" 
+              class="w-full h-[450px] object-cover object-center opacity-95"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#181A1E] via-transparent to-transparent"></div>
+            
+            <div class="absolute top-4 right-4 bg-darkgray1/95 backdrop-blur-md text-white px-3.5 py-1.5 rounded-full text-[11px] font-mono border border-white/15 flex items-center space-x-2 shadow-lg">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>WhatsApp Alert &bull; 1.4s Latency</span>
+            </div>
+
+            <!-- Simulated Phone Notification Card Overlay -->
+            <div class="absolute bottom-4 left-4 right-4 bg-[#23262B]/95 backdrop-blur-md text-white p-4.5 rounded-xl border border-white/15 shadow-xl p-4">
+              <div class="flex items-center justify-between text-[11px] text-beige1 font-mono mb-1.5">
+                <span class="flex items-center space-x-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <strong>WHATSAPP &bull; FRONTDESK AUTO</strong>
+                </span>
+                <span>now</span>
+              </div>
+              <p class="text-xs sm:text-sm font-medium text-white leading-snug">
+                "VIP Inquiry from Marcus Vance (Veloce Labs) intercepted. Tailored automatic reply sent via Gmail &amp; calendar hold placed."
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ENTERPRISE COMPATIBILITY & TRUST STRIP (Darker Gray Surface with White & Beige Text) -->
+  <div class="bg-darkgray1 text-white py-5 border-b border-darkgray2">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4 text-xs">
+      <div class="flex items-center space-x-2 text-beige1 font-mono uppercase tracking-wider">
+        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        <span>Enterprise-Grade Security</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-6 text-gray-300 font-medium">
+        <span>&#10003; Gmail &amp; Google Workspace</span>
+        <span>&#10003; Microsoft Outlook &amp; 365</span>
+        <span>&#10003; WhatsApp &amp; Discord Instant Push</span>
+        <span>&#10003; PayPal Buyer Protection</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3-STEP HOW IT WORKS ARCHITECTURE (Warm Beige #1 & Light Gray Cards) -->
+  <section id="how-it-works" class="py-20 bg-beige1 border-b border-[#CFC3AE]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="px-3.5 py-1 rounded-full bg-darkgray1 text-white text-[11px] font-semibold uppercase tracking-widest">3-Minute Setup</span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-semibold text-darkgray1 mt-3">How FrontDesk Auto Works</h2>
+        <p class="text-darkgray3 mt-2 text-base">Zero complex software to learn. Set up once and let your autonomous inbox assistant run 24/7.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-7">
+        <div class="card-light-gray rounded-2xl p-7">
+          <div class="w-10 h-10 rounded-xl bg-darkgray1 text-beige1 font-mono font-bold text-sm flex items-center justify-center mb-5">01</div>
+          <h3 class="text-xl font-serif font-bold text-darkgray1">Connect Your Inbox &amp; VIP List</h3>
+          <p class="text-sm text-darkgray2 mt-2 leading-relaxed">
+            Link your Gmail or business inbox and specify which key clients, partners, or lead forms require immediate attention.
+          </p>
+        </div>
+
+        <div class="card-dark-slate rounded-2xl p-7">
+          <div class="w-10 h-10 rounded-xl bg-beige1 text-darkgray1 font-mono font-bold text-sm flex items-center justify-center mb-5">02</div>
+          <h3 class="text-xl font-serif font-bold text-white">Instant 3-Second Mobile Alert</h3>
+          <p class="text-sm text-gray-300 mt-2 leading-relaxed">
+            The moment a priority email arrives, FrontDesk Auto sends a concise executive summary directly to your WhatsApp and Discord.
+          </p>
+        </div>
+
+        <div class="card-light-gray rounded-2xl p-7">
+          <div class="w-10 h-10 rounded-xl bg-darkgray1 text-beige1 font-mono font-bold text-sm flex items-center justify-center mb-5">03</div>
+          <h3 class="text-xl font-serif font-bold text-darkgray1">Automatic Tailored Email Reply</h3>
+          <p class="text-sm text-darkgray2 mt-2 leading-relaxed">
+            For approved accounts, FrontDesk Auto automatically sends a polite, context-aware email response so prospects never wait.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM VS SOLUTION SECTION (Light Gray #2 & Warm Beige with Visual Storytelling) -->
+  <section id="problem-solution" class="py-24 bg-graylight2 border-b border-[#B8BCB3]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="px-3.5 py-1 rounded-full bg-beige1 text-darkgray1 text-[11px] font-semibold uppercase tracking-widest border border-[#C5B8A1]">The Executive Difference</span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-semibold text-darkgray1 mt-3">From Inbox Overload to Instant Calm</h2>
+        <p class="text-darkgray3 mt-3 text-base">Compare a cluttered laptop inbox with effortless mobile intelligence.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+        
+        <!-- CARD 1: THE PROBLEM (Stressed User + Laptop Email Inbox with Unread Emails) -->
+        <div class="card-light-gray rounded-2xl overflow-hidden flex flex-col justify-between">
+          <div class="relative h-72 overflow-hidden bg-darkgray1">
+            <img 
+              src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&w=900&q=80" 
+              alt="Stressed professional overwhelmed by laptop email inbox with unread messages" 
+              class="w-full h-full object-cover object-center opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#23262B] via-[#23262B]/35 to-transparent"></div>
+            
+            <!-- Simulated Unread Laptop Inbox Overlay Badge -->
+            <div class="absolute top-4 left-4 bg-[#23262B]/95 text-white px-3.5 py-2 rounded-lg border border-white/15 shadow-md font-mono text-xs flex items-center space-x-2.5">
+              <span class="px-2 py-0.5 rounded bg-red-500/90 text-white font-bold text-[11px]">247 UNREAD</span>
+              <span class="text-beige1">Laptop Inbox Overload</span>
+            </div>
+
+            <div class="absolute bottom-4 left-6 right-6 text-white">
+              <div class="text-[11px] font-semibold uppercase tracking-widest text-beige1">Without FrontDesk Auto</div>
+              <h3 class="text-2xl font-serif font-semibold text-white">Buried Emails &amp; Stressed Follow-Ups</h3>
+            </div>
+          </div>
+
+          <div class="p-8 flex-1 flex flex-col justify-between bg-graylight1">
+            <ul class="space-y-4 text-sm text-darkgray2">
+              <li class="flex items-start space-x-3">
+                <span class="w-5 h-5 rounded-full bg-darkgray2 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">&times;</span>
+                <span><strong>Hundreds of unread emails</strong> pile up on your laptop while you are in client meetings.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="w-5 h-5 rounded-full bg-darkgray2 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">&times;</span>
+                <span><strong>Hours of delay</strong> before high-value prospects receive a first response.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="w-5 h-5 rounded-full bg-darkgray2 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">&times;</span>
+                <span><strong>Constant inbox anxiety</strong>—checking your laptop late at night just to keep up.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CARD 2: THE SOLUTION (Calm Executive Reading Notification on Phone + Dark/Beige Contrast) -->
+        <div class="card-beige rounded-2xl overflow-hidden flex flex-col justify-between border-2 border-darkgray1">
+          <div class="relative h-72 overflow-hidden bg-darkgray1">
+            <img 
+              src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=900&q=85" 
+              alt="Relaxed executive glancing at smartphone notification from FrontDesk Auto" 
+              class="w-full h-full object-cover object-center opacity-90"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#23262B] via-[#23262B]/25 to-transparent"></div>
+            
+            <div class="absolute top-4 left-4 bg-beige1 text-darkgray1 px-3.5 py-2 rounded-lg border border-darkgray1/20 shadow-md font-mono text-xs flex items-center space-x-2">
+              <span class="px-2 py-0.5 rounded bg-darkgray1 text-white font-bold text-[11px]">AUTO-REPLIED</span>
+              <span class="font-semibold">Mobile Alert in 1.4s</span>
+            </div>
+
+            <div class="absolute bottom-4 left-6 right-6 text-white">
+              <div class="text-[11px] font-semibold uppercase tracking-widest text-beige1">With FrontDesk Auto</div>
+              <h3 class="text-2xl font-serif font-semibold text-white">Instant Mobile Alert &amp; Auto-Response</h3>
+            </div>
+          </div>
+
+          <div class="p-8 flex-1 flex flex-col justify-between bg-beige1">
+            <ul class="space-y-4 text-sm text-darkgray1">
+              <li class="flex items-start space-x-3">
+                <span class="w-5 h-5 rounded-full bg-darkgray1 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">&#10003;</span>
+                <span><strong>Immediate WhatsApp &amp; Discord notification</strong> the moment a VIP or prospect writes.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="w-5 h-5 rounded-full bg-darkgray1 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">&#10003;</span>
+                <span><strong>Automatic email replies sent for you</strong> to designated accounts—even while you sleep.</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <span class="w-5 h-5 rounded-full bg-darkgray1 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">&#10003;</span>
+                <span><strong>9:00 AM Daily Executive Briefing</strong> summarizing your priority threads on your phone.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE SIMULATOR SECTION (Light Gray #1 & Dark Gray Card with White Text) -->
+  <section id="simulator" class="py-24 bg-graylight1 border-b border-[#C5C8C0]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="px-3.5 py-1 rounded-full bg-darkgray1 text-white text-[11px] font-semibold uppercase tracking-widest">Interactive Simulator</span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-semibold text-darkgray1 mt-3">See FrontDesk Auto in Action</h2>
+        <p class="text-darkgray3 mt-2 text-sm sm:text-base">Select an industry below to preview the instant mobile alert and automatic email reply.</p>
+      </div>
+
+      <!-- Industry Pills -->
+      <div class="flex flex-wrap justify-center gap-2.5 mb-10">
+        <button onclick="selectIndustry('agency')" id="pill-agency" class="industry-pill px-5 py-2.5 rounded-full text-xs font-semibold bg-darkgray1 text-white shadow-sm transition">
+          Agencies &amp; Studios
+        </button>
+        <button onclick="selectIndustry('realestate')" id="pill-realestate" class="industry-pill px-5 py-2.5 rounded-full text-xs font-medium bg-beige1 text-darkgray1 hover:bg-beige2 border border-[#CFC3AE] transition">
+          Real Estate
+        </button>
+        <button onclick="selectIndustry('consulting')" id="pill-consulting" class="industry-pill px-5 py-2.5 rounded-full text-xs font-medium bg-beige1 text-darkgray1 hover:bg-beige2 border border-[#CFC3AE] transition">
+          Consulting &amp; Legal
+        </button>
+        <button onclick="selectIndustry('ecommerce')" id="pill-ecommerce" class="industry-pill px-5 py-2.5 rounded-full text-xs font-medium bg-beige1 text-darkgray1 hover:bg-beige2 border border-[#CFC3AE] transition">
+          Wholesale &amp; Retail
+        </button>
+      </div>
+
+      <!-- Simulator Split Card -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 rounded-2xl overflow-hidden shadow-xl border border-darkgray1">
+        
+        <div class="lg:col-span-5 relative min-h-[300px] bg-darkgray1">
+          <img id="sim-image" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Client scenario preview" class="w-full h-full object-cover opacity-85" />
+          <div class="absolute inset-0 bg-gradient-to-t from-[#23262B] via-[#23262B]/40 to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6 text-white">
+            <span class="px-2.5 py-1 rounded bg-beige1 text-darkgray1 font-mono text-[10px] font-bold uppercase tracking-wider">Live Scenario</span>
+            <h3 id="sim-intent" class="text-2xl font-serif font-semibold text-white mt-2">AI Pilot Inquiry</h3>
+            <p class="text-xs text-beige1 mt-1"><span id="sim-prospect" class="font-semibold text-white">Marcus Vance</span> &bull; <span id="sim-role">Veloce Labs</span></p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-beige1 p-6 sm:p-9 flex flex-col justify-between space-y-5">
+          <div class="flex items-center justify-between pb-4 border-b border-[#CFC3AE]">
+            <div class="flex items-center space-x-2.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-darkgray1"></span>
+              <span class="text-xs text-darkgray1 font-mono font-semibold uppercase tracking-wider">Inbox Interceptor &amp; Auto-Reply</span>
+            </div>
+            <span class="text-[11px] font-mono text-white bg-darkgray1 px-3 py-1 rounded-full">
+              Alert Speed: 1.4s
+            </span>
+          </div>
+
+          <div class="p-5 rounded-xl bg-graylight1 border border-[#C5C8C0]">
+            <div class="text-[10px] uppercase tracking-widest text-darkgray3 font-semibold mb-1.5">1. Incoming Client Email</div>
+            <p id="sim-snippet" class="italic text-darkgray1 text-sm sm:text-base">
+              "Looking to deploy an AI assistant for our agency next week. Can we book a quick call?"
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl card-dark-slate">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-[10px] uppercase tracking-widest text-beige1 font-semibold">2. Automatic Email Reply Sent + WhatsApp Alert</span>
+              <span class="text-[10px] font-mono text-gray-300">Dispatched via Gmail</span>
+            </div>
+            <p id="sim-draft" class="text-white text-sm sm:text-base leading-relaxed">
+              "Hi Marcus, thanks for reaching out! I've reserved tomorrow at 10 AM for a quick walkthrough. Talk soon."
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HAPPY CUSTOMERS SECTION (Diagonal Mix of Light Gray #2 & Beige Cards with Customer Portraits) -->
+  <section id="customers" class="py-24 bg-diagonal-beige-gray border-b border-[#B8BCB3]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="px-3.5 py-1 rounded-full bg-darkgray1 text-white text-[11px] font-semibold uppercase tracking-widest">Verified Client Outcomes</span>
+        <h2 class="text-3xl sm:text-5xl font-serif font-semibold text-darkgray1 mt-3">Trusted by Busy Founders &amp; Executives</h2>
+        <p class="text-darkgray2 mt-3 text-base">Leaders who replaced cluttered laptop inboxes with instant mobile alerts and automatic replies.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="card-dark-slate rounded-2xl overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="h-60 overflow-hidden relative">
+              <img 
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=700&q=80" 
+                alt="Happy agency founder smiling in modern office" 
+                class="w-full h-full object-cover object-top"
+              />
+              <div class="absolute bottom-3 left-3 bg-darkgray1/90 backdrop-blur-sm text-beige1 px-3 py-1 rounded-full text-[11px] font-mono border border-white/15">
+                +$18,500 Deal Closed in 4 Mins
+              </div>
+            </div>
+            <div class="p-7">
+              <p class="text-white/95 text-sm leading-relaxed italic">
+                "I was at a client lunch when a high-value lead emailed. FrontDesk Auto pinged my WhatsApp and sent a tailored reply within two seconds. By the time I finished coffee, the discovery call was booked."
+              </p>
+            </div>
+          </div>
+          <div class="px-7 pb-6 pt-3 border-t border-white/10 flex items-center justify-between">
+            <div>
+              <div class="font-serif font-bold text-lg text-white">Julian Thorne</div>
+              <div class="text-xs text-beige1">Managing Partner, Apex Digital</div>
+            </div>
+            <span class="text-beige1 text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+        </div>
+
+        <div class="card-beige rounded-2xl overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="h-60 overflow-hidden relative">
+              <img 
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=700&q=80" 
+                alt="Happy female real estate executive smiling with phone" 
+                class="w-full h-full object-cover object-top"
+              />
+              <div class="absolute bottom-3 left-3 bg-darkgray1 text-white px-3 py-1 rounded-full text-[11px] font-mono">
+                Zero Missed Viewings
+              </div>
+            </div>
+            <div class="p-7">
+              <p class="text-darkgray1 text-sm leading-relaxed italic">
+                "My laptop inbox used to have 300+ unread messages every week. Now FrontDesk Auto filters out the noise, texts my phone when cash buyers inquire, and replies automatically."
+              </p>
+            </div>
+          </div>
+          <div class="px-7 pb-6 pt-3 border-t border-[#CFC3AE] flex items-center justify-between">
+            <div>
+              <div class="font-serif font-bold text-lg text-darkgray1">Claire Vance-Sterling</div>
+              <div class="text-xs text-darkgray3">Director, Sterling Luxury Estates</div>
+            </div>
+            <span class="text-darkgray1 text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+        </div>
+
+        <div class="card-light-gray rounded-2xl overflow-hidden flex flex-col justify-between">
+          <div>
+            <div class="h-60 overflow-hidden relative">
+              <img 
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=80" 
+                alt="Happy consulting executive smiling while holding smartphone" 
+                class="w-full h-full object-cover object-top"
+              />
+              <div class="absolute bottom-3 left-3 bg-darkgray1 text-white px-3 py-1 rounded-full text-[11px] font-mono">
+                Saved 11 Hours / Week
+              </div>
+            </div>
+            <div class="p-7">
+              <p class="text-darkgray1 text-sm leading-relaxed italic">
+                "The $50 one-time lifetime offer paid for itself on day one. Having automatic email replies for our key partner accounts makes it feel like I have a full-time Chief of Staff."
+              </p>
+            </div>
+          </div>
+          <div class="px-7 pb-6 pt-3 border-t border-[#C5C8C0] flex items-center justify-between">
+            <div>
+              <div class="font-serif font-bold text-lg text-darkgray1">David Ochieng</div>
+              <div class="text-xs text-darkgray3">Principal, Kinetix Advisory</div>
+            </div>
+            <span class="text-darkgray1 text-sm">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DEDICATED APP MAIL DESK & LIVE TEST DISPATCH + ROI CALCULATOR -->
+  <section id="mail-options" class="py-24 bg-graylight1 border-b border-[#C5C8C0]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Dedicated Mail Options Bar -->
+      <div class="card-dark-slate rounded-2xl p-8 sm:p-10 mb-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-6">
+            <span class="px-3 py-1 rounded-full bg-beige1 text-darkgray1 text-[10px] font-bold uppercase tracking-widest">Dedicated App Mail Desk</span>
+            <h2 class="text-3xl sm:text-4xl font-serif font-semibold text-white mt-3">Direct Mail Options for FrontDesk Auto</h2>
+            <p class="text-gray-300 mt-2 text-sm leading-relaxed">
+              Every inquiry sent to our dedicated app address is tagged <code class="text-beige1 font-mono">[FrontDesk Auto App]</code>, separated into our dedicated app inbox stream, and triggers an immediate mobile notification.
+            </p>
+            <div class="mt-4 inline-flex items-center space-x-2 px-3.5 py-2 rounded-lg bg-darkgray2 border border-white/15 font-mono text-xs text-beige1">
+              <span>Dedicated App Address:</span>
+              <strong id="dedicatedEmailText" class="text-white select-all">frontdeskauto@outlook.com</strong>
+            </div>
+          </div>
+
+          <!-- 4 Direct Mail Client Options -->
+          <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=frontdeskauto@outlook.com&su=%5BFrontDesk%20Auto%20App%5D%20Lifetime%20Access%20%2F%20Onboarding%20Inquiry&body=Hello%20FrontDesk%20Auto%20Team%2C%0A%0AI%20am%20interested%20in%20FrontDesk%20Auto%20(%2450%20Lifetime%20Access).%0A%0AName%3A%20%0ACompany%3A%20%0AWhatsApp%3A%20" target="_blank" rel="noopener" class="p-4 rounded-xl bg-beige1 hover:bg-white text-darkgray1 transition flex items-center justify-between font-semibold text-xs sm:text-sm shadow-sm">
+              <span>1. Compose in Gmail Web</span>
+              <span>&rarr;</span>
+            </a>
+
+            <a href="https://outlook.office.com/mail/deeplink/compose?to=frontdeskauto@outlook.com&subject=%5BFrontDesk%20Auto%20App%5D%20Lifetime%20Access%20Inquiry&body=Hello%20FrontDesk%20Auto%20Team%2C%0A%0AI%20am%20interested%20in%20FrontDesk%20Auto." target="_blank" rel="noopener" class="p-4 rounded-xl bg-darkgray2 hover:bg-gray-700 text-white border border-white/15 transition flex items-center justify-between font-semibold text-xs sm:text-sm">
+              <span>2. Compose in Outlook</span>
+              <span>&rarr;</span>
+            </a>
+
+            <a href="mailto:frontdeskauto@outlook.com?subject=%5BFrontDesk%20Auto%20App%5D%20Customer%20Inquiry&body=Hello%20FrontDesk%20Auto%20Team%2C%0A%0AI%20would%20like%20to%20activate%20FrontDesk%20Auto.%0A%0AName%3A%20%0ACompany%3A%20" class="p-4 rounded-xl bg-darkgray2 hover:bg-gray-700 text-white border border-white/15 transition flex items-center justify-between font-semibold text-xs sm:text-sm">
+              <span>3. Open Default Mail App</span>
+              <span>&rarr;</span>
+            </a>
+
+            <button type="button" onclick="copyDedicatedEmail()" id="copyEmailBtn" class="p-4 rounded-xl bg-beige2 hover:bg-beige1 text-darkgray1 transition flex items-center justify-between font-semibold text-xs sm:text-sm">
+              <span id="copyEmailLabel">4. Copy Dedicated Email</span>
+              <span>&#10064;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="live-demo" class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        
+        <!-- Left 7 Cols: Dedicated App Email & WhatsApp Dispatch Form (Beige Card) -->
+        <div class="lg:col-span-7 card-beige rounded-2xl p-8 sm:p-10">
+          <span class="px-3 py-1 rounded-full bg-darkgray1 text-white text-[10px] font-semibold uppercase tracking-widest">Direct App Inbox + Live Phone Alert</span>
+          <h2 class="text-3xl font-serif font-semibold text-darkgray1 mt-3">Send an App Inquiry or Test Alert</h2>
+          <p class="text-darkgray2 mt-1.5 text-sm mb-6">Delivers a dedicated <code class="font-mono text-xs">[FrontDesk Auto App]</code> email straight to our app inbox and triggers an instant WhatsApp &amp; Discord alert.</p>
+
+          <form id="liveDemoForm" onsubmit="handleDemoSubmit(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" id="demoName" required placeholder="Your Name" class="w-full px-4 py-3 rounded-xl bg-graylight1 border border-[#C5B8A1] text-darkgray1 placeholder-darkgray3 text-sm focus:outline-none focus:border-darkgray1 focus:bg-white transition">
+              <input type="email" id="demoEmail" required placeholder="Your Email Address" class="w-full px-4 py-3 rounded-xl bg-graylight1 border border-[#C5B8A1] text-darkgray1 placeholder-darkgray3 text-sm focus:outline-none focus:border-darkgray1 focus:bg-white transition">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" id="demoCompany" required placeholder="Company Name" class="w-full px-4 py-3 rounded-xl bg-graylight1 border border-[#C5B8A1] text-darkgray1 placeholder-darkgray3 text-sm focus:outline-none focus:border-darkgray1 focus:bg-white transition">
+              <input type="text" id="demoPhone" required placeholder="WhatsApp / Phone" class="w-full px-4 py-3 rounded-xl bg-graylight1 border border-[#C5B8A1] text-darkgray1 placeholder-darkgray3 text-sm focus:outline-none focus:border-darkgray1 focus:bg-white transition">
+            </div>
+
+            <div>
+              <select id="demoTopic" class="w-full px-4 py-3 rounded-xl bg-graylight1 border border-[#C5B8A1] text-darkgray1 text-sm focus:outline-none focus:border-darkgray1 focus:bg-white transition">
+                <option value="Early-Bird $50 Lifetime Access">Topic: Claim $50 Early-Bird Lifetime Access</option>
+                <option value="Live Phone Alert Test">Topic: Test Instant WhatsApp &amp; Email Auto-Reply</option>
+                <option value="Custom Account Setup">Topic: Custom VIP Email Auto-Response Setup</option>
+                <option value="PayPal Order Confirmation">Topic: PayPal Payment Confirmation &amp; Onboarding</option>
+              </select>
+            </div>
+
+            <textarea id="demoMessage" rows="2" required placeholder="Your message for the FrontDesk Auto desk..." class="w-full px-4 py-3 rounded-xl bg-graylight1 border border-[#C5B8A1] text-darkgray1 placeholder-darkgray3 text-sm focus:outline-none focus:border-darkgray1 focus:bg-white transition"></textarea>
+
+            <button type="submit" id="demoBtn" class="w-full py-4 rounded-xl font-semibold text-sm bg-darkgray1 text-white hover:bg-darkgray2 transition shadow-md">
+              Send Dedicated App Email &amp; Live Phone Alert &rarr;
+            </button>
+          </form>
+
+          <!-- Live Stream Log -->
+          <div id="liveStream" class="hidden mt-6 p-4 rounded-xl card-dark-slate font-mono text-xs text-white space-y-1.5">
+            <div id="logStep1">• Routing email to dedicated [FrontDesk Auto App] inbox...</div>
+            <div id="logStep2">• Dispatching instant alert to Discord &amp; WhatsApp...</div>
+            <div id="logStep3" class="text-beige1 font-semibold">• Delivered to FrontDesk Auto Desk &amp; Sir Mus (+254 739 337 270).</div>
+          </div>
+        </div>
+
+        <!-- Right 5 Cols: ROI Calculator (Dark Slate Card with Crisp White Text) -->
+        <div id="roi-calculator" class="lg:col-span-5 card-dark-slate rounded-2xl p-8 sm:p-10">
+          <span class="px-3 py-1 rounded-full bg-beige1 text-darkgray1 text-[10px] font-semibold uppercase tracking-widest">Value Calculator</span>
+          <h3 class="text-3xl font-serif font-semibold text-white mt-3">Annual Revenue Recovered</h3>
+          <p class="text-gray-300 mt-1.5 text-sm mb-7">Estimate what instant 3-second responses add to your bottom line.</p>
+
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-2">
+                <span class="text-beige1">Average Client Value</span>
+                <span id="dealValLabel" class="text-white font-mono font-semibold">$3,500</span>
+              </div>
+              <input type="range" id="dealVal" min="500" max="25000" step="500" value="3500" oninput="calculateROI()" class="w-full cursor-pointer accent-[#ECE3D3]">
+            </div>
+
+            <div>
+              <div class="flex justify-between text-sm font-medium mb-2">
+                <span class="text-beige1">Monthly Inbound Inquiries</span>
+                <span id="leadsValLabel" class="text-white font-mono font-semibold">20 Leads</span>
+              </div>
+              <input type="range" id="leadsVal" min="5" max="100" step="5" value="20" oninput="calculateROI()" class="w-full cursor-pointer accent-[#ECE3D3]">
+            </div>
+
+            <div class="p-6 rounded-xl bg-darkgray2 border border-white/15 text-center mt-4">
+              <div class="text-[11px] text-beige1 uppercase tracking-widest font-semibold">Estimated Revenue Recovered</div>
+              <div id="recoveredRevenue" class="text-3xl sm:text-4xl font-serif font-bold text-white mt-1.5">
+                $42,000 / year
+              </div>
+              <div class="text-xs text-gray-300 mt-1">For a single one-time PayPal payment of $50</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING TIERS WITH DIRECT PAYPAL CHECKOUT & GUARANTEE -->
+  <section id="pricing" class="py-24 bg-creative-bento border-b border-[#C5C8C0]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="px-3.5 py-1 rounded-full bg-darkgray1 text-white text-[11px] font-semibold uppercase tracking-widest">Direct PayPal Checkout</span>
+        <h2 class="text-4xl sm:text-5xl font-serif font-semibold text-darkgray1 mt-3">One-Time Fee. Lifetime Access.</h2>
+        <p class="text-darkgray2 mt-3 text-base">Pay securely via PayPal once and own FrontDesk Auto forever. Zero recurring monthly subscriptions.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <!-- Tier 1: Before Dec 31 ($50) — Direct PayPal Checkout -->
+        <div class="card-dark-slate rounded-2xl p-8 sm:p-10 flex flex-col justify-between relative">
+          <div class="absolute -top-3.5 left-8 px-4 py-1 rounded-full bg-beige1 text-darkgray1 text-[11px] font-bold uppercase tracking-widest shadow">
+            Before Dec 31 &bull; Save 75%
+          </div>
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs uppercase tracking-widest text-beige1 font-semibold">Founding Edition</span>
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-darkgray2 text-white border border-white/15">PayPal Verified</span>
+            </div>
+            <h3 class="text-2xl font-serif font-semibold text-white">Early-Bird Lifetime</h3>
+            <div class="mt-6 mb-6 p-5 rounded-xl bg-darkgray2 border border-white/15">
+              <div class="flex items-baseline space-x-3">
+                <span class="text-5xl font-serif font-bold text-white">$50</span>
+                <span class="text-lg text-gray-400 line-through font-mono">$200</span>
+                <span class="text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded bg-beige1 text-darkgray1">One-Time Fee</span>
+              </div>
+              <span class="text-xs text-beige1 block mt-2">Valid through December 31 &bull; Full Lifetime Access</span>
+            </div>
+            <ul class="space-y-3.5 text-sm text-white/95 border-t border-white/15 pt-6">
+              <li class="flex items-center space-x-3"><span class="text-beige1 font-bold">&#10003;</span><span><strong>Lifetime Access</strong> ($0/month forever)</span></li>
+              <li class="flex items-center space-x-3"><span class="text-beige1 font-bold">&#10003;</span><span>24/7 Email &amp; Web Form Monitoring</span></li>
+              <li class="flex items-center space-x-3"><span class="text-beige1 font-bold">&#10003;</span><span>Automatic Email Replies for Specific Accounts</span></li>
+              <li class="flex items-center space-x-3"><span class="text-beige1 font-bold">&#10003;</span><span>Instant WhatsApp &amp; Discord Alerts + Daily Briefing</span></li>
+              <li class="flex items-center space-x-3"><span class="text-beige1 font-bold">&#10003;</span><span><strong>White-Glove Onboarding Included</strong></span></li>
+            </ul>
+          </div>
+          <div class="mt-8 space-y-3">
+            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=samumeandi%40gmail.com&item_name=FrontDesk+Auto+Early-Bird+Lifetime+Access+%28Musinc+Ltd%29&amount=50.00&currency_code=USD" target="_blank" rel="noopener" class="block text-center py-4 rounded-xl bg-beige1 hover:bg-white text-darkgray1 font-bold text-sm transition shadow-md">
+              Pay $50 with PayPal &rarr;
+            </a>
+            <a href="mailto:frontdeskauto@outlook.com?subject=%5BFrontDesk%20Auto%20App%5D%20%2450%20Early-Bird%20Order%20%26%20Setup&body=Hello%20Sir%20Mus%2C%0A%0AI%20have%20completed%20my%20%2450%20PayPal%20payment%20for%20FrontDesk%20Auto%20Lifetime%20Access.%0A%0AName%3A%20%0APayPal%20Email%3A%20%0AWhatsApp%20Number%3A%20" class="block text-center py-2.5 rounded-xl bg-darkgray2 hover:bg-gray-700 text-beige1 border border-white/10 font-medium text-xs transition">
+              Confirm Order via Dedicated App Email &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Tier 2: From January ($200) — Direct PayPal Checkout -->
+        <div class="card-pewter-gray rounded-2xl p-8 sm:p-10 flex flex-col justify-between relative">
+          <div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-xs uppercase tracking-widest text-darkgray3 font-semibold">Standard Edition</span>
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-beige1 text-darkgray1 border border-[#CFC3AE]">From Jan 1</span>
+            </div>
+            <h3 class="text-2xl font-serif font-semibold text-darkgray1">January Lifetime</h3>
+            <div class="mt-6 mb-6 p-5 rounded-xl bg-graylight1 border border-[#B8BCB3]">
+              <div class="flex items-baseline space-x-3">
+                <span class="text-5xl font-serif font-bold text-darkgray1">$200</span>
+                <span class="text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded bg-beige2 text-darkgray1">One-Time Fee</span>
+              </div>
+              <span class="text-xs text-darkgray3 block mt-2">Standard rate effective January 1 &bull; Full Lifetime Access</span>
+            </div>
+            <ul class="space-y-3.5 text-sm text-darkgray2 border-t border-[#B8BCB3] pt-6">
+              <li class="flex items-center space-x-3"><span class="text-darkgray1 font-bold">&#10003;</span><span><strong>Lifetime Access</strong> (Single one-time payment)</span></li>
+              <li class="flex items-center space-x-3"><span class="text-darkgray1 font-bold">&#10003;</span><span>24/7 Email &amp; Web Form Monitoring</span></li>
+              <li class="flex items-center space-x-3"><span class="text-darkgray1 font-bold">&#10003;</span><span>Automatic Email Replies for Specific Accounts</span></li>
+              <li class="flex items-center space-x-3"><span class="text-darkgray1 font-bold">&#10003;</span><span>Instant WhatsApp &amp; Discord Alerts + Daily Briefing</span></li>
+              <li class="flex items-center space-x-3"><span class="text-darkgray1 font-bold">&#10003;</span><span>Standard Onboarding &amp; Updates</span></li>
+            </ul>
+          </div>
+          <div class="mt-8 space-y-3">
+            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=samumeandi%40gmail.com&item_name=FrontDesk+Auto+Standard+Lifetime+Access+%28Musinc+Ltd%29&amount=200.00&currency_code=USD" target="_blank" rel="noopener" class="block text-center py-4 rounded-xl bg-darkgray1 hover:bg-darkgray2 text-white font-semibold text-sm transition">
+              Reserve $200 Standard License via PayPal &rarr;
+            </a>
+            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=samumeandi%40gmail.com&item_name=FrontDesk+Auto+Early-Bird+Lifetime+Access+%28Musinc+Ltd%29&amount=50.00&currency_code=USD" target="_blank" rel="noopener" class="block text-center py-2.5 rounded-xl bg-beige1 hover:bg-beige2 text-darkgray1 border border-[#CFC3AE] font-semibold text-xs transition">
+              Lock In $50 Early-Bird Today Instead &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXECUTIVE FAQ SECTION (Warm Beige #1 & Light Gray Cards) -->
+  <section class="py-20 bg-beige1 border-b border-[#CFC3AE]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="px-3.5 py-1 rounded-full bg-darkgray1 text-white text-[11px] font-semibold uppercase tracking-widest">Questions &amp; Answers</span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-semibold text-darkgray1 mt-3">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card-light-gray rounded-2xl p-6">
+          <h4 class="font-serif font-bold text-lg text-darkgray1">Is the $50 fee really a one-time payment?</h4>
+          <p class="text-xs sm:text-sm text-darkgray2 mt-2 leading-relaxed">
+            Yes. When you purchase before December 31, you pay $50 once via PayPal for perpetual Lifetime Access—zero monthly fees. Starting January 1, the one-time fee increases to $200.
+          </p>
+        </div>
+        <div class="card-light-gray rounded-2xl p-6">
+          <h4 class="font-serif font-bold text-lg text-darkgray1">Can I choose which emails get automatic replies?</h4>
+          <p class="text-xs sm:text-sm text-darkgray2 mt-2 leading-relaxed">
+            Absolutely. You control your priority sender list so FrontDesk Auto only sends automatic replies to the specific client or partner accounts you approve.
+          </p>
+        </div>
+        <div class="card-light-gray rounded-2xl p-6">
+          <h4 class="font-serif font-bold text-lg text-darkgray1">How fast does the WhatsApp alert arrive?</h4>
+          <p class="text-xs sm:text-sm text-darkgray2 mt-2 leading-relaxed">
+            Within 1.4 to 3 seconds of an email landing in your inbox or web form, a concise summary is delivered directly to your WhatsApp and Discord.
+          </p>
+        </div>
+        <div class="card-light-gray rounded-2xl p-6">
+          <h4 class="font-serif font-bold text-lg text-darkgray1">How does onboarding work after PayPal checkout?</h4>
+          <p class="text-xs sm:text-sm text-darkgray2 mt-2 leading-relaxed">
+            As soon as your $50 PayPal checkout completes, our team activates your dedicated instance and connects your inbox and WhatsApp within minutes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER (Darker Gray Surface with Crisp White & Warm Beige Text) -->
+  <footer class="py-14 border-t border-darkgray2 text-center text-xs text-gray-300 bg-darkgray1">
+    <div class="max-w-5xl mx-auto px-4 space-y-3">
+      <div class="text-white font-serif font-bold text-xl tracking-tight">FrontDesk Auto &bull; Musinc Ltd</div>
+      <div class="flex flex-wrap items-center justify-center gap-4 text-gray-300">
+        <span>Dedicated App Inbox: <a href="mailto:frontdeskauto@outlook.com?subject=%5BFrontDesk%20Auto%20App%5D%20Inquiry" class="text-beige1 underline">frontdeskauto@outlook.com</a></span>
+        <span>&bull;</span>
+        <span>PayPal Checkout: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=samumeandi%40gmail.com&item_name=FrontDesk+Auto+Early-Bird+Lifetime+Access+%28Musinc+Ltd%29&amount=50.00&currency_code=USD" target="_blank" rel="noopener" class="text-beige1 underline">$50 Early-Bird Lifetime</a></span>
+      </div>
+      <div class="pt-2 text-gray-400">&copy; 2026 Musinc Ltd (<a href="https://musinc-ltd.polsia.io/" target="_blank" class="hover:text-white underline">musinc-ltd.polsia.io</a>). Engineered for Executive Excellence.</div>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE SCRIPT -->
+  <script>
+    const industryData = {
+      agency: {
+        prospect: "Marcus Vance",
+        role: "Veloce Labs",
+        intent: "AI Pilot Inquiry",
+        image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+        snippet: `"Looking to deploy an AI assistant for our agency next week. Can we book a quick call?"`,
+        draft: `"Hi Marcus, thanks for reaching out! I've reserved tomorrow at 10 AM for a quick walkthrough. Talk soon."`
+      },
+      realestate: {
+        prospect: "Elena Rostova",
+        role: "Premier Estates",
+        intent: "$2.4M Penthouse Viewing",
+        image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
+        snippet: `"Hi, looking for a private viewing of the Ridgeview Penthouse this Thursday. Cash buyer ready."`,
+        draft: `"Hi Elena, your private viewing is confirmed for Thursday at 2:00 PM. Sending access details via WhatsApp now."`
+      },
+      consulting: {
+        prospect: "David Ochieng",
+        role: "Kinetix Partners",
+        intent: "Audit Automation Demo",
+        image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+        snippet: `"We need an AI workflow to extract key data from client audits. Available for a demo this week?"`,
+        draft: `"Hi David, our automated extraction handles audit files with 99.4% accuracy. Booked your live demo for Wednesday at 10 AM."`
+      },
+      ecommerce: {
+        prospect: "Sarah • Fettle Tea (Javisapa Enterprises)",
+        role: "Fettle Tea (fettletea.co.ke • info@fettletea.co.ke)",
+        intent: "Mount Kenya Purple Tea & Silver Tips Export Order",
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+        snippet: `"Requesting wholesale export quote & Rainforest Alliance / AFA certificates for 500kg of Mount Kenya Purple Tea (TRFK 306/1) and White Silver Tips."`,
+        draft: `"Hello! Thank you for contacting the Fettle Tea Export Desk (powered by FrontDesk Auto • frontdeskauto@outlook.com). Our 100% Mount Kenya Purple Tea & White Silver Tips export pricing and Rainforest Alliance / AFA Kenya certificates have been attached, and Sarah has been alerted via WhatsApp in 1.4s."`
+      }
+    };
+
+    function selectIndustry(key) {
+      document.querySelectorAll('.industry-pill').forEach(btn => {
+        btn.classList.remove('bg-darkgray1', 'text-white', 'shadow-sm', 'font-semibold');
+        btn.classList.add('bg-beige1', 'text-darkgray1', 'border', 'border-[#CFC3AE]', 'font-medium');
+      });
+
+      const activeBtn = document.getElementById(`pill-${key}`);
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-beige1', 'text-darkgray1', 'border', 'border-[#CFC3AE]', 'font-medium');
+        activeBtn.classList.add('bg-darkgray1', 'text-white', 'shadow-sm', 'font-semibold');
+      }
+
+      const item = industryData[key];
+      document.getElementById('sim-prospect').textContent = item.prospect;
+      document.getElementById('sim-role').textContent = item.role;
+      document.getElementById('sim-intent').textContent = item.intent;
+      document.getElementById('sim-snippet').textContent = item.snippet;
+      document.getElementById('sim-draft').textContent = item.draft;
+      document.getElementById('sim-image').src = item.image;
+    }
+
+    function calculateROI() {
+      const dealVal = parseInt(document.getElementById('dealVal').value);
+      const leadsVal = parseInt(document.getElementById('leadsVal').value);
+      
+      document.getElementById('dealValLabel').textContent = `$${dealVal.toLocaleString()}`;
+      document.getElementById('leadsValLabel').textContent = `${leadsVal} Leads`;
+
+      const annualRecovered = Math.round((leadsVal * 0.05 * dealVal) * 12);
+      document.getElementById('recoveredRevenue').textContent = `$${annualRecovered.toLocaleString()} / year`;
+    }
+
+    function copyDedicatedEmail() {
+      const email = "frontdeskauto@outlook.com";
+      navigator.clipboard.writeText(email).then(() => {
+        const label = document.getElementById('copyEmailLabel');
+        label.textContent = "✓ Copied: frontdeskauto@outlook.com";
+        setTimeout(() => {
+          label.textContent = "4. Copy Dedicated Email";
+        }, 3000);
+      });
+    }
+
+    function handleDemoSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('demoBtn');
+      const stream = document.getElementById('liveStream');
+      btn.disabled = true;
+      btn.innerHTML = `<span>Dispatching Dedicated App Email &amp; Alert...</span>`;
+      stream.classList.remove('hidden');
+
+      const name = document.getElementById('demoName').value;
+      const email = document.getElementById('demoEmail').value;
+      const company = document.getElementById('demoCompany').value;
+      const phone = document.getElementById('demoPhone').value;
+      const topic = document.getElementById('demoTopic').value;
+      const message = document.getElementById('demoMessage').value;
+
+      // 1. Send Dedicated Email to frontdeskauto@outlook.com & samumeandi@gmail.com via FormSubmit AJAX
+      const formPayload = JSON.stringify({
+        _subject: `[FrontDesk Auto App] ${topic} — ${name} (${company})`,
+        App_Channel: "FrontDesk Auto Dedicated Inbox (frontdeskauto@outlook.com)",
+        Inquiry_Topic: topic,
+        Client_Name: name,
+        Client_Email: email,
+        Company: company,
+        WhatsApp_Phone: phone,
+        Message: message
+      });
+      ["https://formsubmit.co/ajax/frontdeskauto@outlook.com", "https://formsubmit.co/ajax/samumeandi@gmail.com"].forEach(endpoint => {
+        try {
+          fetch(endpoint, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: formPayload
+          });
+        } catch (err) {}
+      });
+
+      // 2. Dispatch Instant WhatsApp Alert to Sir Mus
+      const waText = `🚨 *FRONTDESK AUTO APP INQUIRY*\n*Topic:* ${topic}\n*From:* ${name} (${company})\n*Email:* ${email}\n*Phone:* ${phone}\n*Note:* ${message}`;
+      const waUrl = `https://api.callmebot.com/whatsapp.php?phone=254739337270&text=${encodeURIComponent(waText)}&apikey=4268291`;
+
+      try {
+        fetch(waUrl, { method: 'GET', mode: 'no-cors', keepalive: true });
+      } catch (err) {
+        new Image().src = waUrl;
+      }
+
+      // 3. Dispatch Instant Discord Webhook Alert
+      const discordPayload = {
+        username: "FrontDesk Auto • Dedicated App Desk",
+        avatar_url: "https://musinc-ltd.polsia.io/favicon.ico",
+        embeds: [{
+          title: `📬 [FrontDesk Auto App] ${topic}`,
+          color: 2303531,
+          fields: [
+            { name: "Prospect", value: `${name} (${company})`, inline: true },
+            { name: "Contact", value: `${email} | ${phone}`, inline: true },
+            { name: "Dedicated Inbox", value: "frontdeskauto@outlook.com", inline: false },
+            { name: "Message", value: message, inline: false }
+          ],
+          footer: { text: "FrontDesk Auto Dedicated App Stream • Forwarded to Sir Mus WhatsApp" },
+          timestamp: new Date().toISOString()
+        }]
+      };
+
+      try {
+        fetch("https://discord.com/api/webhooks/1568537735998738487/8lSB14a_R07Nc-VRlca-yzCtxDu1dIueVM5JZWvPdw8vNstQF3yFIo-1mHXQ729IQWCI", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(discordPayload)
+        });
+      } catch (err) {}
+
+      setTimeout(() => {
+        document.getElementById('logStep1').innerHTML = `<span>&#10003; Dedicated [FrontDesk Auto App] email dispatched</span>`;
+      }, 300);
+
+      setTimeout(() => {
+        document.getElementById('logStep2').innerHTML = `<span>&#10003; Discord alert delivered</span>`;
+      }, 700);
+
+      setTimeout(() => {
+        document.getElementById('logStep3').innerHTML = `<span class="font-bold text-beige1">&#10003; WhatsApp alert delivered to Sir Mus.</span>`;
+        btn.disabled = false;
+        btn.innerHTML = `<span>&#10003; Dispatched to App Inbox — Send Another</span>`;
+      }, 1200);
+    }
+  </script>
+</body>
+</html>
